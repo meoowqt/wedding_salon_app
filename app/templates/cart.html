@@ -1,0 +1,19 @@
+{% extends 'layout.html' %}
+{% block content %}
+<h1>Корзина</h1>
+
+<!-- Список товаров в корзине -->
+{% for item in cart_items %}
+<div class="cart-item">
+  <h3>{{ item.product.name }}</h3>
+  <p>Количество: {{ item.quantity }}</p>
+</div>
+
+<!-- Форма записи на примерку для каждого товара -->
+<form method="POST" action="{{ url_for('app.cart') }}">
+  <input type="hidden" name="cart_item_id" value="{{ item.id }}">
+  <input type="date" name="date" required>
+  <button type="submit">Записаться на примерку</button>
+</form>
+{% endfor %}
+{% endblock %}

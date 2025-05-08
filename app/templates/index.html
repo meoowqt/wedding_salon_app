@@ -1,0 +1,7 @@
+{% extends 'layout.html' %}
+{% block title %}Главная{% endblock %}
+{% block content %}
+<h1>Добро пожаловать в наш свадебный салон!</h1>
+<p>Выберите платье своей мечты из нашего каталога.</p>
+<a class="btn" href="{{ url_for('app.catalog') }}">Перейти в каталог</a>
+{% endblock %}
